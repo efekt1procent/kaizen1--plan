@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaizen 28 - Codzienny Rytuał Hybrydowy</title>
+    <title>Kaizen start 28</title>
     <style>
         :root {
             --bg-color: #121214;
@@ -224,13 +224,13 @@
 <body>
 
     <header>
-        <h1>Kaizen 28 - Codzienny Rytuał</h1>
-        <p class="subtitle">Drążek co drugi dzień + codzienna obecność</p>
+        <h1>Kaizen start 28</h1>
+        <p class="subtitle">Codzienny mikrorytuał • Drążek co 2 dni</p>
     </header>
 
     <div class="habit-card">
-        <h3>💡 Zasada 28 dni</h3>
-        <p>Codziennie otwierasz apkę i robisz krótki mikrorytuał. Drążek pojawia się naprzemiennie co drugi dzień, dając optymalny balans pomiędzy bodźcem siłowym a regeneracją.</p>
+        <h3>💡 Zasada wyzwania</h3>
+        <p>Codziennie otwierasz apkę i robisz dokładnie to, co rozpisane na dany dzień. Drążek pojawia się co drugi dzień, dając czas na regenerację stawów i skóry dłoni.</p>
     </div>
 
     <div class="progress-container">
@@ -248,7 +248,6 @@
     </div>
 
     <script>
-        // Definicja 28 dni z rotacją co 2 dni (Nieparzyste: Drążek, Parzyste: Pompki/Nogi)
         const planData = [];
 
         for (let i = 1; i <= 28; i++) {
@@ -258,31 +257,30 @@
 
             if (isPullDay) {
                 typeName = "Dzień Drążek & Plecy";
-                mobName = "Zwis bierny na drążku";
-                mobDesc = "Złap drążek nachwytem na szerokość barków. Pozwól nogom swobodnie wisieć, całkowicie rozluźnij barki, szyję i dolny odcinek kręgosłupa. Oddychaj spokojnie przez 30-45 sekund.";
-                strName = "Podciąganie klasyczne + Próba Archer Pull-up";
-                strDesc = "Wykonaj 1 czystą serię standardowego podciągania nachwytem (z zapasem, bez bujania). Następnie zrób 1-2 kontrolowane powtórzenia progresji do podciągania jednorącz – np. powolny negatyw (wchodzisz górę oburącz, opuszczasz się powoli na jednej ręce) lub delikatny archer.";
-                strtName = "Rozciąganie najszerszego grzbietu";
-                strtDesc = "Stojąc, złap stabilny punkt (np. drążek lub oparcie), odciągnij biodra w tył i opuść klatkę piersiową do ziemi, rozciągając boki tułowia przez 30 sekund.";
+                mobName = "Zwis bierny na drążku (30-45 sekund)";
+                mobDesc = "Jak wykonać: Złap drążek nachwytem na szerokość barków. Pozwól nogom swobodnie wisieć, całkowicie rozluźnij barki, szyję i dolny odcinek kręgosłupa. Oddychaj spokojnie przez 30 do 45 sekund.";
+                strName = "Podciąganie klasyczne (1 seria) + Archer Pull-up (1-2 powt.)";
+                strDesc = "Jak wykonać: 1. Zrób 1 czystą, powolną serię standardowego podciągania nachwytem z zapasem (bez bujania ciałem). 2. Następnie wykonaj 1-2 powtórzenia progresji (np. powolny negatyw: wejdź górą oburącz, opuszczaj się w 3 sekundy na jednej ręce).";
+                strtName = "Rozciąganie najszerszego grzbietu (30 sekund na stronę)";
+                strtDesc = "Jak wykonać: Stojąc, złap stabilny punkt (np. drążek lub oparcie), odciągnij biodra mocno w tył i opuść klatkę piersiową w dół do ziemi, rozciągając boki tułowia przez 30 sekund.";
             } else {
-                // Dni parzyste: rotacja między pompkami a nogami
                 let isPush = (i % 4 === 0);
                 if (isPush) {
                     typeName = "Dzień Klatka & Pompki";
-                    mobName = "Koci grzbiet (Cat-Cow)";
-                    mobDesc = "Uklęknij w podporze przodem (dłonie pod barkami, kolana pod biodrami). Na wydechu wygnij kręgosłup łukiem do góry, chowając głowę. Na wdechu łagodnie opuść brzuch w dół. Zrób 10 płynnych powtórzeń.";
-                    strName = "Pompki klasyczne";
-                    strDesc = "Przyjmij pozycję deski: dłonie nieco szerzej niż barki, ciało w jednej linii, brzuch i pośladki mocno napięte. Opuść klatkę piersiową blisko ziemi i dynamicznie wróc do góry. Wykonaj 1 solidną, czystą serię.";
-                    strtName = "Pozycja dziecka (Child's Pose)";
-                    strtDesc = "Usiądź na piętach, wyciągnij ręce daleko przed siebie na podłodze i opuść klatkę piersiową w dół. Oddychaj głęboko w plecy przez 30-45 sekund.";
+                    mobName = "Koci grzbiet / Cat-Cow (10 powtórzeń)";
+                    mobDesc = "Jak wykonać: Uklęknij w podporze przodem (dłonie pod barkami, kolana pod biodrami). Na wydechu wygnij kręgosłup łukiem do góry, chowając głowę. Na wdechu łagodnie opuść brzuch w dół, patrząc przed siebie. Zrób 10 płynnych powtórzeń.";
+                    strName = "Pompki klasyczne (1 seria z zapasem)";
+                    strDesc = "Jak wykonać: Przyjmij pozycję deski: dłonie nieco szerzej niż barki, ciało w jednej linii, brzuch i pośladki mocno napięte. Opuść klatkę piersiową blisko ziemi i dynamicznie wróc do góry. Wykonaj 1 solidną serię (np. 8-15 powtórzeń zależnie od formy).";
+                    strtName = "Pozycja dziecka / Child's Pose (30-45 sekund)";
+                    strtDesc = "Jak wykonać: Usiądź na piętach, wyciągnij ręce daleko przed siebie na podłodze i opuść klatkę piersiową w dół. Oddychaj głęboko w dolny odcinek pleców przez 30-45 sekund.";
                 } else {
                     typeName = "Dzień Nogi & Core";
-                    mobName = "Krążenia bioder";
-                    mobDesc = "Stój stabilnie ze stopami szerzej niż biodra. Wykonaj powolne, obszerne krążenia miednicą: 8-10 kółek w prawo, a następnie 8-10 kółek w lewo.";
-                    strName = "Przysiady klasyczne (Air Squats)";
-                    strDesc = "Stopy na szerokość ramion. Zrób głęboki przysiad, pilnując, aby pięty cały czas stykały się z podłożem, a plecy były proste. Wykonaj 1 spokojną, kontrolowaną serię.";
-                    strtName = "Mostek biodrowy (Glute Bridge)";
-                    strtDesc = "Połóż się na plecach, ugnij kolana, stopy na ziemi. Unieś biodra wysoko do góry, mocno napinając pośladki w najwyższym punkcie na 2 sekundy. Powtórz 5-8 razy.";
+                    mobName = "Krążenia bioder (po 10 kółek w każdą stronę)";
+                    mobDesc = "Jak wykonać: Stój stabilnie ze stopami szerzej niż biodra. Wykonaj powolne, obszerne krążenia miednicą: 10 kółek w prawo, a następnie 10 kółek w levo, aby dokładnie rozruszać stawy.";
+                    strName = "Przysiady klasyczne / Air Squats (1 seria, 15-20 powtórzeń)";
+                    strDesc = "Jak wykonać: Stopy na szerokość ramion. Zrób głęboki przysiad, pilnując, aby pięty cały czas stykały się z podłożem, a plecy były proste. Wykonaj 1 spokojną, kontrolowaną serię.";
+                    strtName = "Mostek biodrowy / Glute Bridge (8-10 powtórzeń)";
+                    strtDesc = "Jak wykonać: Połóż się na plecach, ugnij kolana, stopy na ziemi. Unieś biodra wysoko do góry, mocno napinając pośladki w najwyższym punkcie i przytrzymując przez 2 sekundy. Powtórz 8-10 razy.";
                 }
             }
 
@@ -307,7 +305,7 @@
                 const weekDiv = document.createElement('div');
                 weekDiv.className = 'week-section';
                 
-                weekDiv.innerHTML = `<div class="week-title">Tydzień ${w} (Codzienny rytuał)</div>`;
+                weekDiv.innerHTML = `<div class="week-title">Tydzień ${w} (Kaizen start 28)</div>`;
 
                 weekDays.forEach(dayObj => {
                     const isDone = completedDays.includes(dayObj.day);
