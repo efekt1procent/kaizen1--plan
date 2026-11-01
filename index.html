@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaizen 28 - Hybrydowy Plan Siłowy</title>
+    <title>Kaizen 28 - Codzienny Rytuał Hybrydowy</title>
     <style>
         :root {
             --bg-color: #121214;
@@ -224,13 +224,13 @@
 <body>
 
     <header>
-        <h1>Kaizen 28 (Hybryda)</h1>
-        <p class="subtitle">Lekki nawyk + precyzyjne opisy i akcent pod 1 rękę</p>
+        <h1>Kaizen 28 - Codzienny Rytuał</h1>
+        <p class="subtitle">Drążek co drugi dzień + codzienna obecność</p>
     </header>
 
     <div class="habit-card">
-        <h3>💡 Pełna kontrola techniczna</h3>
-        <p>Każdy element treningu ma teraz szczegółową instrukcję. Rozwiń dzień i kliknij przyciski informacyjne przy mobilizacji, sile oraz rozciąganiu.</p>
+        <h3>💡 Zasada 28 dni</h3>
+        <p>Codziennie otwierasz apkę i robisz krótki mikrorytuał. Drążek pojawia się naprzemiennie co drugi dzień, dając optymalny balans pomiędzy bodźcem siłowym a regeneracją.</p>
     </div>
 
     <div class="progress-container">
@@ -248,80 +248,51 @@
     </div>
 
     <script>
-        const planData = [
-            // TYDZIEŃ 1
-            { week: 1, day: 1, type: "Dzień A: Drążek & Progresja 1R", 
-              mobilization: { name: "Zwis luźny (dekompresja)", desc: "Złap drążek nachwytem, całkowicie rozluźnij nogi, miednicę oraz obręcz barkową. Pozwól grawitacji bezpiecznie rozciągnąć kręgosłup i otworzyć przestrzeń w stawach barkowych przez 30-45 sekund." },
-              strength: { name: "Podciąganie klasyczne + 1-2 powt. Progresji OAPU", desc: "Wykonaj 1 czystą, płynną serię zwykłego podciągania z zapasem. Następnie zrób 1-2 kontrolowane powtórzenia wariantu pod 1 rękę (np. powolny negatyw z akcentem na jedną stronę lub archer pull-up)." },
-              stretch: { name: "Rozciąganie najszerszego grzbietu", desc: "Złap drążek nieco wyżej (lub użyj stabilnego oparcia), odciągnij biodra w tył i opuść klatkę, rozciągając boki tułowia i plecy przez 30 sekund." }
-            },
-            { week: 1, day: 2, type: "Dzień B: Pompka & Klatka", 
-              mobilization: { name: "Kot-Krowa (Cat-Cow)", desc: "W klęku podpartym zrób głęboki wydech, wyginając kręgosłup w łuk do góry (koci grzbiet, schowaj głowę), a przy wdechu łagodnie opuszczaj kręgosłup w dół (krowa, spojrzenie w przód). Wykonaj 8-10 płynnych ruchów." },
-              strength: { name: "1 Seria pompek (kontrolowanych)", desc: "Czysta technicznie seria pompek. Brzuch i pośladki mocno napięte, ciało w idealnej linii prostej. Obniżaj klatkę powoli, zachowując pełną kontrolę." },
-              stretch: { name: "Pozycja Dziecka (Child's Pose)", desc: "Usiądź na piętach, wyciągnij ramiona daleko przed siebie i opuść klatkę piersiową w stronę maty. Oddychaj głęboko w dolny odcinek lędźwi przez 30-45 sekund." }
-            },
-            { week: 1, day: 3, type: "Dzień C: Nogi & Core", 
-              mobilization: { name: "Krążenia bioder i miednicy", desc: "Stojąc szeroko, wykonaj powolne, szerokie krążenia miednicą: po 8-10 kółek w prawo i w lewo. Cel: całkowite odblokowanie spiętych stawów biodrowych." },
-              strength: { name: "1 Seria przysiadów", desc: "Spokojne, głębokie przysiady z zachowaniem prostych pleców i pełnym kontaktem stóp z podłożem. Ruch płynny, bez gwałtownych zrywów." },
-              stretch: { name: "Mostek barkowy (Glute Bridge)", desc: "Leżąc na plecach, ugnij kolana i unieś biodra wysoko, mocno napinając pośladki na górze (przytrzymaj 2 sekundy). Rozciąga przód bioder i chroni lędźwie." }
-            },
+        // Definicja 28 dni z rotacją co 2 dni (Nieparzyste: Drążek, Parzyste: Pompki/Nogi)
+        const planData = [];
 
-            // TYDZIEŃ 2
-            { week: 2, day: 4, type: "Dzień A: Drążek & Progresja 1R", 
-              mobilization: { name: "Zwis aktywny", desc: "Złap drążek i ściągnij łopatki mocno w dół i do tyłu, aktywując mięśnie pleców bez zginania rąk. Przytrzymaj spięcie przez 5-10 sekund, powtórz 3 razy." },
-              strength: { name: "Podciąganie + Próba OAPU (Negatyw / Archer)", desc: "Solidna seria bazowa na drążku + 1-2 kontrolowane próby ruchu jednorecznego (np. skupienie ciężaru na jednej ręce podczas opuszczania)." },
-              stretch: { name: "Rozciąganie ramion i barków", desc: "Przełóż jedną rękę przed klatką piersiową i delikatnie dociśnij drugą ręką. Po 20 sekundach zmień stronę." }
-            },
-            { week: 2, day: 5, type: "Dzień B: Pompka & Klatka", 
-              mobilization: { name: "Kot-Krowa", desc: "10 powolnych, świadomych powtórzeń skupionych na każdym kręgu kręgosłupa." },
-              strength: { name: "Pompka (wolna faza ekscentryczna)", desc: "1 seria pompek, w której opuszczanie w dół trwa równe 3 sekundy, a wejście do góry jest dynamiczne." },
-              stretch: { name: "Pozycja Dziecka z rękoma w bok", desc: "W pozycji dziecka przesuń obie ręce maksymalnie w prawo, rozciągając lewy bok, a potem w lewo (po 20 sekund na stronę)." }
-            },
-            { week: 2, day: 6, type: "Dzień C: Nogi & Core", 
-              mobilization: { name: "Krążenia stawów i bioder", desc: "Rozruszanie miednicy i kolan przed obciążeniem (po 8 krążeń)." },
-              strength: { name: "Przysiady z pauzą na dole", desc: "1 seria przysiadów, zatrzymując się na 1 sekundę w najniższym punkcie (bez odbicia)." },
-              stretch: { name: "Mostek barkowy + rozciąganie tyłu ud", desc: "Uniesienie bioder połączone z delikatnym wyprostowaniem jednej nogi w górę." }
-            },
-            { week: 2, day: 7, type: "Dzień A: Drążek & Progresja 1R", 
-              mobilization: { name: "Zwis swobodny", desc: "30 sekund pełnej dekompresji kręgosłupa i rozluźnienia." },
-              strength: { name: "Podciąganie + Próba OAPU", desc: "Jakościowa seria docelowa z naciskiem na nienaganną technikę." },
-              stretch: { name: "Rozciąganie pleców", desc: "Odciąganie tułowia na drążku przez 30 sekund." }
-            },
+        for (let i = 1; i <= 28; i++) {
+            let weekNum = Math.ceil(i / 7);
+            let isPullDay = (i % 2 !== 0); // Dni nieparzyste: Drążek, Dni parzyste: Pompki/Nogi
+            let typeName, mobName, mobDesc, strName, strDesc, strtName, strtDesc;
 
-            // TYDZIEŃ 3
-            { week: 3, day: 8, type: "Dzień A: Drążek & Progresja 1R", mobilization: { name: "Zwis luźny", desc: "Dekompresja stawów barkowych i kręgosłupa (30s)." }, strength: { name: "Podciąganie + Próba OAPU", desc: "Kontrolowany akcent siłowy." }, stretch: { name: "Rozciąganie najszerszego", desc: "Głębokie odciągnięcie tułowia." } },
-            { week: 3, day: 9, type: "Dzień B: Pompka & Brzuch", mobilization: { name: "Kot-Krowa", desc: "Mobilność całego kręgosłupa (10 powtórzeń)." }, strength: { name: "Pompka klasyczna + Deska (Plank 20s)", desc: "1 seria pompek + natychmiastowa deska na przedramionach (napięty brzuch i pośladki przez 20 sekund)." }, stretch: { name: "Pozycja Dziecka", desc: "Pełen relaks lędźwi (30s)." } },
-            { week: 3, day: 10, type: "Dzień C: Nogi & Core", mobilization: { name: "Krążenia bioder", desc: "Odblokowanie stawów miednicowych." }, strength: { name: "Przysiady", desc: "1 seria płynnych, głębokich przysiadów." }, stretch: { name: "Mostek barkowy", desc: "Aktywacja pośladków (3 powtórzenia z 3-sekundowym przytrzymaniem)." } },
-            { week: 3, day: 11, type: "Dzień A: Drążek & Progresja 1R", mobilization: { name: "Zwis swobodny", desc: "Rozciąganie grawitacyjne (30s)." }, strength: { name: "Podciąganie + Próba OAPU", desc: "Mocne powtórzenia bazowe." }, stretch: { name: "Rozciąganie pleców", desc: "30s relaksu." } },
-            { week: 3, day: 12, type: "Dzień B: Pompka", mobilization: { name: "Kot-Krowa", desc: "Mobilność (8 powtórzeń)." }, strength: { name: "Klasyczna pompka", desc: "1 seria z pełną kontrolą tempa." }, stretch: { name: "Pozycja Dziecka", desc: "Ulgowy rozciąg." } },
+            if (isPullDay) {
+                typeName = "Dzień Drążek & Plecy";
+                mobName = "Zwis bierny na drążku";
+                mobDesc = "Złap drążek nachwytem na szerokość barków. Pozwól nogom swobodnie wisieć, całkowicie rozluźnij barki, szyję i dolny odcinek kręgosłupa. Oddychaj spokojnie przez 30-45 sekund.";
+                strName = "Podciąganie klasyczne + Próba Archer Pull-up";
+                strDesc = "Wykonaj 1 czystą serię standardowego podciągania nachwytem (z zapasem, bez bujania). Następnie zrób 1-2 kontrolowane powtórzenia progresji do podciągania jednorącz – np. powolny negatyw (wchodzisz górę oburącz, opuszczasz się powoli na jednej ręce) lub delikatny archer.";
+                strtName = "Rozciąganie najszerszego grzbietu";
+                strtDesc = "Stojąc, złap stabilny punkt (np. drążek lub oparcie), odciągnij biodra w tył i opuść klatkę piersiową do ziemi, rozciągając boki tułowia przez 30 sekund.";
+            } else {
+                // Dni parzyste: rotacja między pompkami a nogami
+                let isPush = (i % 4 === 0);
+                if (isPush) {
+                    typeName = "Dzień Klatka & Pompki";
+                    mobName = "Koci grzbiet (Cat-Cow)";
+                    mobDesc = "Uklęknij w podporze przodem (dłonie pod barkami, kolana pod biodrami). Na wydechu wygnij kręgosłup łukiem do góry, chowając głowę. Na wdechu łagodnie opuść brzuch w dół. Zrób 10 płynnych powtórzeń.";
+                    strName = "Pompki klasyczne";
+                    strDesc = "Przyjmij pozycję deski: dłonie nieco szerzej niż barki, ciało w jednej linii, brzuch i pośladki mocno napięte. Opuść klatkę piersiową blisko ziemi i dynamicznie wróc do góry. Wykonaj 1 solidną, czystą serię.";
+                    strtName = "Pozycja dziecka (Child's Pose)";
+                    strtDesc = "Usiądź na piętach, wyciągnij ręce daleko przed siebie na podłodze i opuść klatkę piersiową w dół. Oddychaj głęboko w plecy przez 30-45 sekund.";
+                } else {
+                    typeName = "Dzień Nogi & Core";
+                    mobName = "Krążenia bioder";
+                    mobDesc = "Stój stabilnie ze stopami szerzej niż biodra. Wykonaj powolne, obszerne krążenia miednicą: 8-10 kółek w prawo, a następnie 8-10 kółek w lewo.";
+                    strName = "Przysiady klasyczne (Air Squats)";
+                    strDesc = "Stopy na szerokość ramion. Zrób głęboki przysiad, pilnując, aby pięty cały czas stykały się z podłożem, a plecy były proste. Wykonaj 1 spokojną, kontrolowaną serię.";
+                    strtName = "Mostek biodrowy (Glute Bridge)";
+                    strtDesc = "Połóż się na plecach, ugnij kolana, stopy na ziemi. Unieś biodra wysoko do góry, mocno napinając pośladki w najwyższym punkcie na 2 sekundy. Powtórz 5-8 razy.";
+                }
+            }
 
-            // TYDZIEŃ 4
-            { week: 4, day: 13, type: "Dzień A: Drążek & Progresja 1R", mobilization: { name: "Zwis swobodny", desc: "Dekompresja." }, strength: { name: "Podciąganie + Próba OAPU", desc: "Szczyt formy i kontroli." }, stretch: { name: "Rozciąganie", desc: "30s." } },
-            { week: 4, day: 14, type: "Dzień B: Pompka & Brzuch", mobilization: { name: "Kot-Krowa", desc: "Mobilność." }, strength: { name: "Pompka + Plank 30s", desc: "Pompka + stabilizacja core przez 30 sekund." }, stretch: { name: "Pozycja Dziecka", desc: "Ulga." } },
-            { week: 4, day: 15, type: "Dzień C: Nogi & Core", mobilization: { name: "Krążenia", desc: "Biodra." }, strength: { name: "Przysiady", desc: "1 seria." }, stretch: { name: "Mostek", desc: "Tył." } },
-            { week: 4, day: 16, type: "Dzień A: Drążek & Progresja 1R", mobilization: { name: "Zwis swobodny", desc: "Dekompresja." }, strength: { name: "Podciąganie + Próba OAPU", desc: "Jakość." }, stretch: { name: "Rozciąganie", desc: "30s." } },
-            { week: 4, day: 17, type: "Dzień B: Pompka", mobilization: { name: "Kot-Krowa", desc: "Mobilność." }, strength: { name: "Pompka", desc: "1 seria." }, stretch: { name: "Pozycja Dziecka", desc: "Relaks." } },
-            { week: 4, day: 18, type: "Dzień C: Nogi & Core", mobilization: { name: "Krążenia", desc: "Stawy." }, strength: { name: "Przysiady", desc: "1 seria." }, stretch: { name: "Mostek", desc: "Tył." } },
-        ];
-
-        // Dopełnienie do 28 dni
-        for(let i = 19; i <= 28; i++) {
-            let mod = i % 3;
-            let typeName = mod === 1 ? "Dzień A: Drążek & Progresja 1R" : (mod === 2 ? "Dzień B: Pompka & Brzuch" : "Dzień C: Nogi & Core");
-            let mob = mod === 1 ? "Zwis swobodny na drążku" : (mod === 2 ? "Kot-Krowa (Cat-Cow)" : "Krążenia bioder i miednicy");
-            let str = mod === 1 ? "Podciąganie + Próba OAPU (1-2 powt.)" : (mod === 2 ? "Klasyczna pompka" : "Standardowy przysiad");
-            let strt = mod === 1 ? "Rozciąganie pleców na drążku" : (mod === 2 ? "Pozycja Dziecka (Child's Pose)" : "Mostek barkowy");
-            let mobDesc = mod === 1 ? "30 sekund swobodnego zwisu, całkowite rozluźnienie barków." : (mod === 2 ? "8-10 płynnych ruchów mobilizujących kręgosłup góra-dół." : "Szerokie krążenia miednicą (po 8 kółek w każdą stronę).");
-            let strDesc = mod === 1 ? "Zwykłe podciąganie + 1-2 kontrolowane ruchy w stronę podciągania jednorącz." : (mod === 2 ? "1 solidna, czysta seria pompek w idealnej linii ciała." : "1 seria spokojnych, głębokich przysiadów bez pośpiechu.");
-            let strtDesc = mod === 1 ? "Odciągnięcie tułowia na drążku (30 sekund)." : (mod === 2 ? "Głęboki relaks w pozycji dziecka z oddechem w lędźwie (30s)." : "Uniesienie bioder z mocnym napięciem pośladków.");
-            
             planData.push({
-                week: Math.ceil(i / 7),
+                week: weekNum,
                 day: i,
                 type: typeName,
-                mobilization: { name: mob, desc: mobDesc },
-                strength: { name: str, desc: strDesc },
-                stretch: { name: strt, desc: strtDesc }
+                mobilization: { name: mobName, desc: mobDesc },
+                strength: { name: strName, desc: strDesc },
+                stretch: { name: strtName, desc: strtDesc }
             });
         }
 
@@ -336,13 +307,7 @@
                 const weekDiv = document.createElement('div');
                 weekDiv.className = 'week-section';
                 
-                let weekTitleText = `Tydzień ${w} `;
-                if(w === 1) weekTitleText += "(3 dni - Płynny start)";
-                else if(w === 2) weekTitleText += "(4 dni - Budowanie rytmu)";
-                else if(w === 3) weekTitleText += "(5 dni - Wyższa częstotliwość)";
-                else if(w === 4) weekTitleText += "(6 dni - Pełny mikrorytuał)";
-
-                weekDiv.innerHTML = `<div class="week-title">${weekTitleText}</div>`;
+                weekDiv.innerHTML = `<div class="week-title">Tydzień ${w} (Codzienny rytuał)</div>`;
 
                 weekDays.forEach(dayObj => {
                     const isDone = completedDays.includes(dayObj.day);
@@ -360,18 +325,18 @@
                         </div>
                         <div class="day-content" id="day-content-${dayObj.day}">
                             <div class="exercise-item">
-                                <span class="exercise-label">1. Mobilizacja:</span> ${dayObj.mobilization.name}
-                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 1)">ℹ️ Instrukcja</button>
+                                <span class="exercise-label">1. Rozgrzewka / Mobilizacja:</span> ${dayObj.mobilization.name}
+                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 1)">ℹ️ Jak wykonać?</button>
                                 <div class="instruction-box" id="inst-${dayObj.day}-1">${dayObj.mobilization.desc}</div>
                             </div>
                             <div class="exercise-item" style="margin-top: 10px;">
-                                <span class="exercise-label">2. Siła / Akcent Kaizen:</span> ${dayObj.strength.name}
-                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 2)">ℹ️ Instrukcja</button>
+                                <span class="exercise-label">2. Część główna (Kaizen):</span> ${dayObj.strength.name}
+                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 2)">ℹ️ Jak wykonać?</button>
                                 <div class="instruction-box" id="inst-${dayObj.day}-2">${dayObj.strength.desc}</div>
                             </div>
                             <div class="exercise-item" style="margin-top: 10px;">
-                                <span class="exercise-label">3. Rozciąganie:</span> ${dayObj.stretch.name}
-                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 3)">ℹ️ Instrukcja</button>
+                                <span class="exercise-label">3. Rozciąganie / Wyciszenie:</span> ${dayObj.stretch.name}
+                                <br><button class="instruction-toggle" onclick="toggleInst(${dayObj.day}, 3)">ℹ️ Jak wykonać?</button>
                                 <div class="instruction-box" id="inst-${dayObj.day}-3">${dayObj.stretch.desc}</div>
                             </div>
                             <button class="complete-btn" onclick="toggleComplete(${dayObj.day})">
